@@ -12,6 +12,7 @@ public class App {
         // Font Size
         String FONT_BOLD = "\u001b[1m";
         String FONT_RESET = "\033[0m";
+        String FONT_ITALIC = "\u001B[3m";
 
         // Background colors
         String COLOR_TITLE_GREEN = "\u001b[42m";
@@ -35,7 +36,7 @@ public class App {
 
         // exibir e manipular os dados 
         for (Map<String,String> filme : listaDeFilmes) {
-            System.out.println(COLOR_TITLE_GREEN + "Título: " + FONT_BOLD + filme.get("title") + COLOR_RESET + FONT_RESET);
+            System.out.println(FONT_ITALIC + COLOR_TITLE_GREEN + "Título: " + FONT_BOLD + filme.get("title") + COLOR_RESET + FONT_RESET);
             System.out.println(COLOR_IMAGE_BRIGHT_CYAN + "Poster: " + FONT_BOLD + filme.get("image") + COLOR_RESET + FONT_RESET);
             System.out.println(COLOR_CLASSIFICATION_MAGENTA + "Classificaçao :" + FONT_BOLD + filme.get("imDbRating") + COLOR_RESET + FONT_RESET);
             System.out.println();
