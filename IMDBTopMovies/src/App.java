@@ -20,8 +20,10 @@ public class App {
         String COLOR_CLASSIFICATION_MAGENTA = "\u001b[45m";
         String COLOR_RESET = "\u001b[47;1m";
 
+        String key = System.getenv("IMDB_KEY");
+
         // fazer uma conexão HTTP e buscar os top 250 filmes
-        String mostPopularMovies = "https://imdb-api.com/en/API/MostPopularMovies/k_e5ggpsqh";
+        String mostPopularMovies = "https://imdb-api.com/en/API/MostPopularMovies/" + key;
         //String mostPopularTvs = "https://imdb-api.com/en/API/MostPopularTVs/k_e5ggpsqh";
         //String topTvs = "https://imdb-api.com/en/API/Top250TVs/k_e5ggpsqh";
         URI endereco = URI.create(mostPopularMovies);
