@@ -3,12 +3,9 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.net.http.HttpResponse.BodyHandlers;
-import java.util.List;
-import java.util.Map;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        
         // Font Size
         String FONT_BOLD = "\u001b[1m";
         String FONT_RESET = "\033[0m";
@@ -33,14 +30,14 @@ public class App {
         String body = response.body();
 
         // extrair só os dados que interessam (titulo, poster, classificação)
-        var parser = new JsonParser();
-        List<Map<String, String>> listaDeFilmes = parser.parse(body);
+        var parser = new JacksonParser();
+        var listaDeFilmes = parser.parse(body);
 
         // exibir e manipular os dados 
-        for (Map<String,String> filme : listaDeFilmes) {
-            System.out.println(FONT_ITALIC + COLOR_TITLE_GREEN + "Título: " + FONT_BOLD + filme.get("title") + COLOR_RESET + FONT_RESET);
-            System.out.println(COLOR_IMAGE_BRIGHT_CYAN + "Poster: " + FONT_BOLD + filme.get("image") + COLOR_RESET + FONT_RESET);
-            System.out.println(COLOR_CLASSIFICATION_MAGENTA + "Classificaçao :" + FONT_BOLD + filme.get("imDbRating") + COLOR_RESET + FONT_RESET);
+        for (var filme : listaDeFilmes) {
+            System.out.println(FONT_ITALIC + COLOR_TITLE_GREEN + "Título: " + FONT_BOLD + filme.getTitle() + COLOR_RESET + FONT_RESET);
+            System.out.println(COLOR_IMAGE_BRIGHT_CYAN + "Poster: " + FONT_BOLD + filme.getImage() + COLOR_RESET + FONT_RESET);
+            System.out.println(COLOR_CLASSIFICATION_MAGENTA + "Classificaçao :" + FONT_BOLD + filme.getImDbRating() + COLOR_RESET + FONT_RESET);
             System.out.println();
         } 
     }

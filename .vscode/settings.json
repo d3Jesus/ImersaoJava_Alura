@@ -1,0 +1,10 @@
+{
+    "java.project.outputPath": "IMDBTopMovies\\bin",
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "IMDBTopMovies\\lib\\jackson-annotations-2.13.3.jar",
+        "IMDBTopMovies\\lib\\jackson-core-2.13.3.jar",
+        "IMDBTopMovies\\lib\\jackson-databind-2.13.3.jar",
+        "IMDBTopMovies\\lib\\gson-2.8.2.jar"
+    ]
+}
