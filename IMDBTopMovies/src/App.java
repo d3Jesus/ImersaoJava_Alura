@@ -8,6 +8,17 @@ import java.util.Map;
 
 public class App {
     public static void main(String[] args) throws Exception {
+        
+        // Font Size
+        String FONT_BOLD = "\u001b[1m";
+        String FONT_RESET = "\033[0m";
+
+        // Background colors
+        String COLOR_TITLE_GREEN = "\u001b[42m";
+        String COLOR_IMAGE_BRIGHT_CYAN = "\u001b[46;1m";
+        String COLOR_CLASSIFICATION_MAGENTA = "\u001b[45m";
+        String COLOR_RESET = "\u001b[47;1m";
+
         // fazer uma conexão HTTP e buscar os top 250 filmes
         String mostPopularMovies = "https://imdb-api.com/en/API/MostPopularMovies/k_e5ggpsqh";
         //String mostPopularTvs = "https://imdb-api.com/en/API/MostPopularTVs/k_e5ggpsqh";
@@ -24,10 +35,10 @@ public class App {
 
         // exibir e manipular os dados 
         for (Map<String,String> filme : listaDeFilmes) {
-            System.out.println("Título: " + filme.get("title"));
-            System.out.println("Poster:" + filme.get("image"));
-            System.out.println("Classificação" + filme.get("imDbRating"));
+            System.out.println(COLOR_TITLE_GREEN + "Título: " + FONT_BOLD + filme.get("title") + COLOR_RESET + FONT_RESET);
+            System.out.println(COLOR_IMAGE_BRIGHT_CYAN + "Poster: " + FONT_BOLD + filme.get("image") + COLOR_RESET + FONT_RESET);
+            System.out.println(COLOR_CLASSIFICATION_MAGENTA + "Classificaçao :" + FONT_BOLD + filme.get("imDbRating") + COLOR_RESET + FONT_RESET);
             System.out.println();
-        }
+        } 
     }
 }
