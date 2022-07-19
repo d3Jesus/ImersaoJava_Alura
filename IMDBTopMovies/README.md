@@ -16,3 +16,11 @@ Meanwhile, the compiled output files will be generated in the `bin` folder by de
 ## Dependency Management
 
 The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+
+## Tasks
+
+- [x] Consumir o endpoint de filmes mais populares da API do IMDB
+- [x] Endpoint que retorna as melhores séries e o que retorna as séries mais populares
+- [] Usar emojis com código UTF-8
+- [x] Decorar o terminal com cores negrito e itálico usando códigos ANSI
+- [x] Colocar a chave da API do IMDB em algum lugar fora do código como um arquivo de configuração (p. ex, um arquivo .properties) ou uma variável de ambiente
